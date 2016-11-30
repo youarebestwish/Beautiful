@@ -26,6 +26,9 @@ public class CellView extends BaseView {
 
     }
 
+    public void DrawTable(){
+        
+    }
 
     @Override
     protected void onDraw(Canvas canvas) {

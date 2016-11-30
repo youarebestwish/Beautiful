@@ -18,6 +18,8 @@ import java.util.List;
 import custom11.xiaoai.com.beautiful.R;
 import custom11.xiaoai.com.beautiful.ui.BaseActivity;
 import custom11.xiaoai.com.beautiful.ui.activity.CellViewActivity;
+import custom11.xiaoai.com.beautiful.ui.activity.CheckMarkActivity;
+import custom11.xiaoai.com.beautiful.ui.activity.DrawPictureActivity;
 import custom11.xiaoai.com.beautiful.ui.activity.EasyCustomActivity;
 
 public class CustomViewAdapter extends BaseAdapter {
@@ -38,11 +40,16 @@ public class CustomViewAdapter extends BaseAdapter {
         mActivitys.add(EasyCustomActivity.class);
 
         mActivitys.add(CellViewActivity.class);
+        mActivitys.add(DrawPictureActivity.class);
+
+        mActivitys.add(CheckMarkActivity.class);
     }
 
     private void initData() {
         mList.add("PEN CustomView");
         mList.add("CELL CustomView");
+        mList.add("DrawPicture CustomView");
+        mList.add("CheckMark CustomView");
 
     }
 

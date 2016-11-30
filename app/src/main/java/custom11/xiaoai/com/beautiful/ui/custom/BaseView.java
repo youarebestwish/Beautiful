@@ -37,6 +37,13 @@ public class BaseView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
+
+
+    }
+
+    public  void drawTable(Canvas canvas,Paint p) {
+
         for(int x=0;x<getWidth();x+=50){
             canvas.drawLine(x,0,x,getHeight(),p);
 
