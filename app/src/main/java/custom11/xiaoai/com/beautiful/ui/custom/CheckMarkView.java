@@ -21,6 +21,12 @@ public class CheckMarkView extends BaseView {
 
     private Bitmap bitmap;
 
+    private  int bitmapWidth;
+
+    private int bitmapHeight;
+
+
+
     public CheckMarkView(Context context) {
         super(context,null);
     }
@@ -28,41 +34,43 @@ public class CheckMarkView extends BaseView {
     public CheckMarkView(Context context, AttributeSet attrs ) {
         super(context, attrs);
         bitmap= BitmapFactory.decodeResource(context.getResources(), R.drawable.checkmark);
-
+        bitmapWidth=bitmap.getWidth()/10;
+        bitmapHeight=bitmap.getHeight();
 
     }
 
 
-   private  int i=0;
+    private  int page=0;
 
-    private Rect srcf;
 
-    private Rect tof=new Rect(-200,-200,200,200);
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.translate(getWidth()/2,getHeight()/2);
         p.setStyle(Paint.Style.FILL);
-        canvas.drawCircle(0,0,250,p);
+        canvas.drawCircle(0,0,bitmapWidth/2*1.1f,p);
 
-        srcf= new Rect(i*100,0,(i+1 )*100,100);
+
+        Rect tof=new Rect(-bitmapWidth/2,-bitmapHeight/2,bitmapWidth/2,bitmapHeight/2);
+
+        Rect srcf=  new Rect(page*bitmapWidth,0,(page+1 )*bitmapWidth,bitmapHeight);
 
 
         canvas.drawBitmap(bitmap,srcf,tof,null
         );
 
-      /*  try {
-            Thread.sleep(50);
+       try {
+            Thread.sleep(20);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        if(i<10 ){
-            i++;
-            L.e("i=" +i);
+        if(page<9 ){
+            page++;
+            L.e("page=" +page);
             invalidate();
-        }*/
+        }
 
 
 
